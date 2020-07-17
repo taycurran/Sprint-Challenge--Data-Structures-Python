@@ -137,7 +137,7 @@ class DoublyLinkedList:
     """
     # move_to_front(self.dll.head.next)
     def move_to_front(self, node):
-        if node is self.tail:
+        if node self.:
             # Reset Prev and Next for New Head
             node.prev = None
             node.next = self.head
