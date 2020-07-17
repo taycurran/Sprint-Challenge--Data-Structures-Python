@@ -13,6 +13,7 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
+# O (n^2)
 # This Method is 5.24 Seconds
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
@@ -20,6 +21,8 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+
+# 0(n log n) ?
 # BST Method Done in 0.11 Seconds
 bst = BSTNode("")
 # Build BST

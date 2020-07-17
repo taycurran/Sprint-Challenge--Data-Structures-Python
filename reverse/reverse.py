@@ -38,36 +38,21 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        if self.head is None:
-            return None
-        elif self.head.next_node is None:
-            self.head = self.head
-        else:
-            current_node = self.head
-            nodes = []
-            while current_node.next_node is not None:
-                nodes.append(current_node.value)
-                current_node = current_node.next_node
-            last_node = current_node.value
-            reverse = LinkedList()
-            for value in nodes:
-                reverse.add_to_head(value)
-            reverse.add_to_head(last_node)
-            self.head = reverse.head
-            return reverse
-        
-        
-        
-list_e = LinkedList()
+    def reverse_list(self, node, prev=None):
+        if node.next_node is None:
+            self.head = node
+            return
+        self.reverse_list(node.get_next())
+        temp = node.get_next()
+        temp.next_node = node
+        node.next_node = None
 
-list_s = LinkedList()
-list_s.add_to_head(1)
-
-list_l = LinkedList()
-list_l.add_to_head(1)
-list_l.add_to_head(2)
-list_l.add_to_head(3)
-list_l.add_to_head(4)
-list_l.add_to_head(5)
-list_l.reverse_list(list_l.head, None)
+        # def reverse_list(self, node, prev):
+        #     if self.head is None or self.head.next_node is None:
+        #         return self.head
+            
+        #     rest = self.reverse_list(self.head.next_node, None)
+        #     self.head.next_node.next_node = head
+        #     self.head.next_node = None
+            
+        #     return rest
